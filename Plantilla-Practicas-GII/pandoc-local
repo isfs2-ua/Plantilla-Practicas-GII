@@ -1,0 +1,3 @@
+#!/bin/sh
+BASE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec "$BASE/.pandoc-local/usr/bin/pandoc" --data-dir="$BASE/.pandoc-local/usr/share/pandoc-3.7.0.2/data" "$@"

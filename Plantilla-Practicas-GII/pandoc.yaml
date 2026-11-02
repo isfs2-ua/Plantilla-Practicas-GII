@@ -1,0 +1,24 @@
+input-files:
+  - memoria.md
+  - capitulos/01-introduccion.md
+  - capitulos/02-objetivos.md
+  - capitulos/03-desarrollo.md
+  - capitulos/04-resultados-y-pruebas.md
+  - capitulos/05-conclusiones.md
+  - capitulos/06-referencias.md
+from: markdown
+standalone: true
+pdf-engine: lualatex
+table-of-contents: true
+toc-depth: 3
+number-sections: true
+highlight-style: tango
+variables:
+  documentclass: article
+  classoption:
+    - titlepage
+  fontsize: 11pt
+  geometry:
+    - margin=2.5cm
+include-in-header:
+  - formato.tex
