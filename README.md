@@ -91,7 +91,7 @@ En [Desarrollo](capitulos/03-desarrollo.md) encontrarás ejemplos listos para co
 
 ## Anexos opcionales
 
-El archivo [capitulos/07-anexos.md](capitulos/07-anexos.md) contiene ejemplos para un registro de pruebas y código complementario. Para incluirlos, añade esta línea al final de `input-files` en `pandoc.yaml`, después de las referencias:
+El archivo [capitulos/07-anexos.md](capitulos/07-anexos.md) contiene ejemplos para un registro de pruebas y código complementario. Para incluirlos, comprueba que esta línea figura al final de `input-files` en `pandoc.yaml`, después de las referencias; si no está, añádela:
 
 ```yaml
   - capitulos/07-anexos.md
@@ -109,7 +109,17 @@ Si no necesitas bibliografía, elimina la cita de ejemplo; puedes dejar vacío `
 
 ## Compilación automática
 
-El flujo de [GitHub Actions](.github/workflows/compilar.yml) comprueba las citas y compila la memoria con y sin logotipo en cada `push`, solicitud de cambios y ejecución manual. Si termina correctamente, el PDF de ejemplo queda disponible como artefacto de la ejecución durante siete días. El resultado se consulta en la pestaña **Actions** del repositorio; la comprobación comienza cuando los cambios estén subidos a GitHub.
+El flujo de [GitHub Actions](.github/workflows/compilar.yml) comprueba las citas, compila la memoria con y sin logotipo y compila el ejemplo de anexos por separado, aunque no figure en `input-files`. Se ejecuta en cada `push`, solicitud de cambios y ejecución manual. Si termina correctamente, el PDF de ejemplo queda disponible como artefacto de la ejecución durante siete días. El resultado se consulta en la pestaña **Actions** del repositorio; la comprobación comienza cuando los cambios estén subidos a GitHub.
+
+## Resolución de problemas
+
+- **`pandoc: command not found` o `lualatex: command not found`:** instala la herramienta indicada en los requisitos y comprueba que está disponible con `pandoc --version` o `lualatex --version`. Si acabas de instalarla, abre una terminal nueva.
+- **Falta un archivo `.sty`:** instala el paquete de LaTeX que proporciona el archivo indicado por el error y vuelve a compilar. El nombre del paquete de tu distribución puede ser distinto del nombre del archivo.
+- **No se encuentra `formato.tex`, el catálogo o una imagen:** ejecuta el comando desde la carpeta de la plantilla y comprueba que el archivo existe y que la ruta y las mayúsculas coinciden. Las imágenes deben conservarse junto a sus rutas en `recursos/`.
+- **`Portada desconocida`:** revisa el identificador `portada` en `memoria.md` y cópialo exactamente de `portadas/asignaturas.tsv`. Para una portada genérica usa `portada: general` o elimina el campo.
+- **Una cita aparece como `[@clave]` o se avisa de una referencia no encontrada:** comprueba que la clave existe en `referencias.bib`, que no hay errores en la entrada y que generas el PDF con `pandoc --defaults=pandoc.yaml -o memoria.pdf` desde la carpeta de la plantilla.
+- **Aparecen `??` en una referencia o los números no coinciden:** revisa que cada `\ref{...}` tenga una `\label{...}` o un identificador de encabezado correspondiente y único. Vuelve a generar el PDF y comprueba el resultado.
+- **Error de LaTeX sin causa evidente:** lee la primera línea que comienza por `!` en el mensaje de error; suele indicar el archivo o comando implicado. Revisa las llaves, los bloques de LaTeX y los paquetes que hayas añadido antes de volver a compilar.
 
 ## Licencias y recursos de terceros
 

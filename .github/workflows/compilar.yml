@@ -29,6 +29,12 @@ jobs:
       - name: Comprobar la portada sin logotipo
         run: pandoc --defaults=pandoc.yaml -M logo-ua=false -o /tmp/memoria-sin-logo.pdf
 
+      - name: Comprobar los anexos de forma independiente
+        run: >-
+          pandoc --from=markdown --standalone --pdf-engine=lualatex
+          --include-in-header=formato.tex --number-sections --table-of-contents
+          memoria.md capitulos/07-anexos.md -o /tmp/memoria-anexos.pdf
+
       - name: Guardar el PDF de ejemplo
         uses: actions/upload-artifact@v4
         with:
