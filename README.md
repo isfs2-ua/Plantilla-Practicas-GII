@@ -10,7 +10,7 @@ Plantilla editable en Markdown para generar memorias en PDF con Pandoc y LuaLaTe
 ## Uso
 
 1. Copia esta carpeta para cada práctica.
-2. Edita los datos de la cabecera de `memoria.md`: título, asignatura, autores y curso. Añade en el subtítulo o el documento cualquier dato adicional que pida el profesorado.
+2. Edita los datos de la cabecera de `memoria.md`: título, asignatura, autores y curso. Puedes añadir los campos opcionales de portada indicados más abajo.
 3. Edita los archivos de `capitulos/` para sustituir el contenido de ejemplo y coloca las imágenes en `recursos/`. Cada archivo contiene una sección principal de la memoria.
 4. Para añadir, quitar o reordenar capítulos, modifica la lista `input-files` de `pandoc.yaml`. Mantén `memoria.md` en primer lugar para conservar los datos de la portada.
 5. Desde esta carpeta, ejecuta:
@@ -23,7 +23,7 @@ Abre y revisa el PDF antes de entregarlo. Si falta un paquete `.sty`, instálalo
 
 ## Portadas por asignatura
 
-La plantilla incluye variantes para las asignaturas del [plan de estudios del Grado en Ingeniería Informática de la Universidad de Alicante](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-11557), incluidas las optativas y el trabajo de fin de grado. Combinan cuatro composiciones y un color propio para cada asignatura; son propuestas de la plantilla, no diseños oficiales de la UA.
+La plantilla incluye variantes para las asignaturas del [plan de estudios del Grado en Ingeniería Informática de la Universidad de Alicante](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-11557), incluidas las optativas. Combinan cuatro composiciones y un color propio para cada asignatura; son propuestas de la plantilla, no diseños oficiales de la UA.
 
 Busca la asignatura en [portadas/asignaturas.tsv](portadas/asignaturas.tsv) y copia su identificador en la cabecera de `memoria.md`. Por ejemplo:
 
@@ -38,6 +38,30 @@ lang: es-ES
 ```
 
 El nombre de la asignatura se añade automáticamente delante del subtítulo. Si no indicas `portada` o usas `portada: general`, se conserva la portada genérica y puedes escribir la asignatura directamente en `subtitle`. También puedes probar una variante sin cambiar el archivo con `pandoc --defaults=pandoc.yaml -M portada=programacion-1 -o memoria.pdf`. Ejecuta Pandoc desde la carpeta de la plantilla para que encuentre el catálogo y el filtro.
+
+### Datos opcionales y logotipo
+
+Añade a la cabecera los campos que necesites; los que omitas no aparecerán. Por ejemplo:
+
+```yaml
+grupo: "A2"
+profesorado: "Nombre del profesor o profesora"
+fecha-entrega: "15 de noviembre de 2026"
+numero-practica: "3"
+logo-ua: false
+```
+
+`logo-ua: false` sustituye el logotipo por una cabecera tipográfica y permite compilar sin `recursos/logo-ua.pdf`. Omite esta opción o usa `logo-ua: true` para mostrar el logotipo. Mantén `date` para el curso académico; `fecha-entrega` es independiente. Si usas `numero-practica`, puedes dejar el subtítulo para otra información y evitar repetir el número.
+
+### Galería de composiciones
+
+Estos ejemplos se muestran sin el logotipo. La última columna del [catálogo](portadas/asignaturas.tsv) indica qué composición corresponde a cada asignatura; el color depende de la asignatura elegida.
+
+| Composición 0: Sistemas y Tecnologías de Información | Composición 1: Fundamentos Físicos de la Informática |
+| --- | --- |
+| ![Portada con bloque oscuro](portadas/vistas/composicion-0.png) | ![Portada con franja superior](portadas/vistas/composicion-1.png) |
+| Composición 2: Fundamentos de las Bases de Datos | Composición 3: Fundamentos de los Computadores |
+| ![Portada con recuadro claro](portadas/vistas/composicion-2.png) | ![Portada alineada a la derecha](portadas/vistas/composicion-3.png) |
 
 ## Markdown y LaTeX
 

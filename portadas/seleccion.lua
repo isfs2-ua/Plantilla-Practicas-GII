@@ -6,6 +6,28 @@ function Meta(meta)
   end
   cabeceras:insert(pandoc.MetaBlocks({pandoc.RawBlock('latex', '\\input{formato.tex}')}))
   meta['header-includes'] = cabeceras
+
+  local ajustes = {}
+  local campos = {
+    {'grupo', 'portadagrupo'},
+    {'profesorado', 'portadaprofesorado'},
+    {'fecha-entrega', 'portadafechaentrega'},
+    {'numero-practica', 'portadanumeropractica'}
+  }
+  for _, campo in ipairs(campos) do
+    local valor = meta[campo[1]]
+    if valor and pandoc.utils.stringify(valor) ~= '' then
+      local texto = pandoc.utils.stringify(valor)
+      local contenido = pandoc.write(pandoc.Pandoc({pandoc.Plain({pandoc.Str(texto)})}), 'latex'):gsub('%s+$', '')
+      table.insert(ajustes, '\\renewcommand{\\' .. campo[2] .. '}{' .. contenido .. '}')
+    end
+  end
+  if meta['logo-ua'] ~= nil and pandoc.utils.stringify(meta['logo-ua']) == 'false' then
+    table.insert(ajustes, '\\portadalogofalse')
+  end
+  if #ajustes > 0 then
+    cabeceras:insert(pandoc.MetaBlocks({pandoc.RawBlock('latex', table.concat(ajustes, '\n'))}))
+  end
   if not meta.portada then return meta end
   local id = pandoc.utils.stringify(meta.portada)
   if id == '' or id == 'general' then return meta end
