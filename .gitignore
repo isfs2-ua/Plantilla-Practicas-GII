@@ -1,4 +1,5 @@
 *.pdf
+!recursos/logo-ua.pdf
 *.aux
 *.log
 *.out

@@ -3,5 +3,91 @@
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
+
+% Portada: conserva los datos habituales de la cabecera Markdown.
+\definecolor{portadaazul}{HTML}{153653}
+\definecolor{portadaacento}{HTML}{168A9A}
+\definecolor{portadagris}{HTML}{536473}
+\makeatletter
+\newcommand{\portadasubtitulo}{}
+\newcommand{\portadaestilo}{0}
+\providecommand{\subtitle}[1]{\renewcommand{\portadasubtitulo}{#1}}
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \sffamily
+    \color{portadaazul}
+    \noindent
+    \begin{minipage}[c]{0.50\textwidth}
+      \includegraphics[width=\linewidth]{recursos/logo-ua.pdf}
+    \end{minipage}%
+    \begin{minipage}[c]{0.50\textwidth}
+      {\small\bfseries GRADO EN INGENIERÍA INFORMÁTICA\par}
+      \vspace{0.3em}
+      {\small\color{portadagris}Memoria de prácticas\par}
+    \end{minipage}\par
+    \vspace{0.9em}
+    {\color{portadaacento}\rule{\textwidth}{2pt}}\par
+    \vspace*{0.11\textheight}
+    \ifcase\portadaestilo\relax
+    \noindent\begingroup
+      \setlength{\fboxsep}{1.5em}%
+      \colorbox{portadaazul}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+          \vspace{2em}
+          {\color{white}\fontsize{33}{39}\selectfont\bfseries\@title\par}
+          \vspace{1em}
+          {\color{portadaacento!60!white}\rule{3.5cm}{3pt}\par}
+          \vspace{0.7em}
+          {\large\color{white}\portadasubtitulo\par}
+          \vspace{2em}
+        }%
+      }%
+    \endgroup\par
+    \or
+    {\color{portadaacento}\rule{\textwidth}{9pt}\par}
+    \vspace{2em}
+    {\fontsize{33}{39}\selectfont\bfseries\@title\par}
+    \vspace{1em}
+    {\large\color{portadagris}\portadasubtitulo\par}
+    \vspace{1.5em}
+    {\color{portadaacento}\rule{3cm}{3pt}\par}
+    \or
+    \noindent\begingroup
+      \setlength{\fboxsep}{1.5em}%
+      \colorbox{portadaacento!12}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+          \vspace{2em}
+          {\color{portadaacento}\rule{3.5cm}{4pt}\par}
+          \vspace{1.2em}
+          {\fontsize{33}{39}\selectfont\bfseries\@title\par}
+          \vspace{1em}
+          {\large\color{portadagris}\portadasubtitulo\par}
+          \vspace{2em}
+        }%
+      }%
+    \endgroup\par
+    \or
+    \begin{flushright}
+      {\color{portadaacento}\rule{6cm}{9pt}\par}
+      \vspace{2em}
+      {\fontsize{33}{39}\selectfont\bfseries\@title\par}
+      \vspace{1em}
+      {\large\color{portadagris}\portadasubtitulo\par}
+      \vspace{1.5em}
+      {\color{portadaacento}\rule{\textwidth}{0.8pt}\par}
+    \end{flushright}
+    \fi
+    \vfill
+    {\color{portadaacento}\rule{\textwidth}{2pt}}\par
+    \vspace{1.2em}
+    {\small\bfseries\MakeUppercase{Autoría}\par}
+    \vspace{0.35em}
+    {\normalsize\let\and\par\@author\par}
+    \vspace{1.5em}
+    {\small\color{portadagris}\@date\par}
+  \end{titlepage}%
+}
+\makeatother

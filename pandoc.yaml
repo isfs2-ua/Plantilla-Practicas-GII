@@ -13,6 +13,8 @@ table-of-contents: true
 toc-depth: 3
 number-sections: true
 highlight-style: tango
+filters:
+  - portadas/seleccion.lua
 variables:
   documentclass: article
   classoption:
@@ -20,5 +22,3 @@ variables:
   fontsize: 11pt
   geometry:
     - margin=2.5cm
-include-in-header:
-  - formato.tex

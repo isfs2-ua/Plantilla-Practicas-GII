@@ -1,0 +1,73 @@
+# Identificador | asignatura | color RGB hexadecimal | composición (0–3)
+sistemas-y-tecnologias-de-informacion|Sistemas y Tecnologías de Información|8C2121|0
+fundamentos-fisicos-de-la-informatica|Fundamentos Físicos de la Informática|21408C|1
+fundamentos-de-las-bases-de-datos|Fundamentos de las Bases de Datos|608C21|2
+fundamentos-de-los-computadores|Fundamentos de los Computadores|8C217F|3
+programacion-1|Programación 1|218C7A|0
+programacion-2|Programación 2|8C5B21|1
+matematica-discreta|Matemática Discreta|3C218C|2
+matematicas-1|Matemáticas 1|268C21|3
+matematicas-2|Matemáticas 2|8C2145|0
+estructura-de-los-computadores|Estructura de los Computadores|21648C|1
+estadistica|Estadística|848C21|2
+analisis-y-diseno-de-algoritmos|Análisis y Diseño de Algoritmos|76218C|3
+arquitectura-de-los-computadores|Arquitectura de los Computadores|218C57|0
+diseno-de-bases-de-datos|Diseño de Bases de Datos|8C3721|1
+herramientas-avanzadas-para-el-desarrollo-de-aplicaciones|Herramientas Avanzadas para el Desarrollo de Aplicaciones|212A8C|2
+lenguajes-y-paradigmas-de-programacion|Lenguajes y Paradigmas de Programación|498C21|3
+programacion-3|Programación 3|8C2169|0
+programacion-y-estructuras-de-datos|Programación y Estructuras de Datos|21888C|1
+redes-de-computadores|Redes de Computadores|8C7121|2
+sistemas-operativos|Sistemas Operativos|52218C|3
+administracion-de-sistemas-operativos-y-de-redes-de-computadores|Administración de Sistemas Operativos y de Redes de Computadores|218C33|0
+analisis-y-especificacion-de-sistemas-software|Análisis y Especificación de Sistemas Software|8C212F|1
+diseno-de-sistemas-software|Diseño de Sistemas Software|214E8C|2
+gestion-de-proyectos-informaticos|Gestión de Proyectos Informáticos|6D8C21|3
+ingenieria-de-los-computadores|Ingeniería de los Computadores|8C218C|0
+planificacion-y-pruebas-de-sistemas-software|Planificación y Pruebas de Sistemas Software|218C6D|1
+sistemas-distribuidos|Sistemas Distribuidos|8C4D21|2
+sistemas-inteligentes|Sistemas Inteligentes|2E218C|3
+administracion-de-negocio-electronico|Administración de Negocio Electrónico|338C21|0
+explotacion-de-la-informacion|Explotación de la Información|8C2153|1
+gestion-e-implantacion-de-redes-de-computadores|Gestión e Implantación de Redes de Computadores|21728C|2
+ingenieria-de-mantenimiento-de-computadores-y-redes|Ingeniería de Mantenimiento de Computadores y Redes|8C8821|3
+ingles-i|Inglés I|68218C|0
+tecnicas-avanzadas-de-especificacion-software|Técnicas Avanzadas de Especificación Software|218C49|1
+administracion-de-empresas|Administración de Empresas|21388C|3
+administracion-e-implantacion-de-servicios-en-internet|Administración e Implantación de Servicios en Internet|578C21|0
+administracion-y-gestion-de-bases-de-datos|Administración y Gestión de Bases de Datos|8C2177|1
+aplicaciones-distribuidas-en-internet|Aplicaciones Distribuidas en Internet|218C83|2
+automatizacion-y-robotica|Automatización y Robótica|8C6421|3
+desafios-de-programacion|Desafíos de Programación|44218C|0
+desarrollo-colaborativo-de-aplicaciones|Desarrollo Colaborativo de Aplicaciones|218C25|1
+desarrollo-de-aplicaciones-en-internet|Desarrollo de Aplicaciones en Internet|8C213C|2
+desarrollo-de-software-en-arquitecturas-paralelas|Desarrollo de Software en Arquitecturas Paralelas|215C8C|3
+domotica-y-entornos-inteligentes|Domótica y Entornos Inteligentes|7B8C21|0
+escenarios-tecnologicos-en-las-organizaciones|Escenarios Tecnológicos en las Organizaciones|7E218C|1
+estrategias-de-seguridad|Estrategias de Seguridad|218C5F|2
+gestion-de-calidad-software|Gestión de Calidad Software|8C4021|3
+gestion-de-la-informacion|Gestión de la Información|21228C|0
+gestion-y-gobierno-de-las-tecnologias-de-la-informacion|Gestión y Gobierno de las Tecnologías de la Información|418C21|1
+ingenieria-de-requisitos|Ingeniería de Requisitos|8C2160|2
+ingenieria-web|Ingeniería Web|21808C|3
+ingles-ii|Inglés II|8C7A21|0
+integracion-de-aplicaciones-y-procesos-empresariales|Integración de Aplicaciones y Procesos Empresariales|5A218C|1
+inteligencia-de-negocio-y-gestion-de-procesos|Inteligencia de Negocio y Gestión de Procesos|218C3B|2
+interconexion-de-redes|Interconexión de Redes|8C2126|3
+metodologias-agiles-de-desarrollo-de-software|Metodologías Ágiles de Desarrollo de Software|21468C|0
+metodologias-y-tecnologias-de-integracion-de-sistemas|Metodologías y Tecnologías de Integración de Sistemas|658C21|1
+practicas-academicas-externas-i|Prácticas Académicas Externas I|8C2184|2
+practicas-academicas-externas-ii|Prácticas Académicas Externas II|218C75|3
+procesamiento-de-lenguajes|Procesamiento de Lenguajes|8C5621|0
+programacion-concurrente|Programación Concurrente|36218C|1
+razonamiento-automatico|Razonamiento Automático|2B8C21|2
+seguridad-en-el-diseno-de-software|Seguridad en el Diseño de Software|8C214A|3
+sistemas-de-gestion-de-contenidos-y-de-usuarios-en-la-web|Sistemas de Gestión de Contenidos y de Usuarios en la Web|216A8C|0
+sistemas-de-tiempo-real|Sistemas de Tiempo Real|898C21|1
+sistemas-embebidos|Sistemas Embebidos|71218C|2
+sistemas-graficos-interactivos|Sistemas Gráficos Interactivos|218C51|3
+sistemas-industriales|Sistemas Industriales|8C3221|0
+tecnologia-y-arquitectura-robotica|Tecnología y Arquitectura Robótica|212F8C|1
+teoria-de-la-computacion|Teoría de la Computación|4F8C21|2
+tratamiento-de-datos-para-sistemas-de-informacion|Tratamiento de Datos para Sistemas de Información|8C216E|3
+vision-artificial-y-robotica|Visión Artificial y Robótica|218C8B|0
