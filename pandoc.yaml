@@ -6,6 +6,7 @@ input-files:
   - capitulos/04-resultados-y-pruebas.md
   - capitulos/05-conclusiones.md
   - capitulos/06-referencias.md
+  - capitulos/07-anexos.md
 from: markdown
 standalone: true
 pdf-engine: lualatex

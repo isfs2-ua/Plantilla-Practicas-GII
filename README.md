@@ -21,6 +21,16 @@ Plantilla editable en Markdown para generar memorias en PDF con Pandoc y LuaLaTe
 
 Abre y revisa el PDF antes de entregarlo. Si falta un paquete `.sty`, instálalo en tu distribución de LaTeX y vuelve a compilar. La portada usa los datos del encabezado y el índice aparece después. Para quitarlo, cambia `table-of-contents` a `false` en `pandoc.yaml`.
 
+### Lista de comprobación antes de entregar
+
+- [ ] La portada contiene el título, la asignatura, la autoría, el curso y los demás datos exigidos.
+- [ ] He sustituido los textos, imágenes, tablas, código y citas de ejemplo por el contenido de mi práctica.
+- [ ] Las figuras y tablas son legibles, tienen un pie adecuado y se mencionan en el texto.
+- [ ] Las citas y la bibliografía corresponden a las fuentes utilizadas y siguen el estilo solicitado.
+- [ ] He incluido los anexos necesarios y he eliminado los ejemplos que no correspondan.
+- [ ] El PDF se ha generado correctamente y he revisado todas sus páginas, el índice y la numeración.
+- [ ] El archivo final y su nombre cumplen las instrucciones de entrega de la asignatura.
+
 ## Portadas por asignatura
 
 La plantilla incluye variantes para las asignaturas del [plan de estudios del Grado en Ingeniería Informática de la Universidad de Alicante](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-11557), incluidas las optativas. Combinan cuatro composiciones y un color propio para cada asignatura; son propuestas de la plantilla, no diseños oficiales de la UA.
@@ -78,6 +88,16 @@ Estos ejemplos se muestran sin el logotipo. La última columna del [catálogo](p
 Puedes usar Markdown de Pandoc para encabezados, tablas, imágenes y bloques de código. Las fórmulas se escriben entre `$...$` o `$$...$$`. Para incluir LaTeX sin procesar, usa un bloque con la etiqueta `{=latex}`, como en el ejemplo de `capitulos/03-desarrollo.md`. Añade los paquetes que necesites a `formato.tex`; evita cargar dos veces paquetes ya incluidos por Pandoc. Los bloques de LaTeX puro están pensados para la salida PDF y pueden omitirse al convertir a otros formatos.
 
 En [Desarrollo](capitulos/03-desarrollo.md) encontrarás ejemplos listos para copiar de código, fórmulas, tablas y una figura con pie. También se muestran referencias automáticas a secciones, tablas, figuras y ecuaciones mediante `\label{...}` y `\ref{...}`. Estos ejemplos de referencias usan LaTeX y están destinados a la salida PDF; asigna un identificador distinto a cada elemento y sustituye el contenido y la imagen de ejemplo antes de entregar la memoria.
+
+## Anexos opcionales
+
+El archivo [capitulos/07-anexos.md](capitulos/07-anexos.md) contiene ejemplos para un registro de pruebas y código complementario. Para incluirlos, añade esta línea al final de `input-files` en `pandoc.yaml`, después de las referencias:
+
+```yaml
+  - capitulos/07-anexos.md
+```
+
+Edita los títulos y contenidos según tu práctica; añade más encabezados de primer nivel (`#`) para crear otros anexos. En el PDF empiezan en una página nueva, aparecen en el índice y se numeran con letras. Puedes referirte a ellos con `\ref{anexo:pruebas}` o con el identificador que definas. El cambio de numeración utiliza LaTeX y está pensado para la salida PDF. Si no necesitas anexos, deja el archivo fuera de `input-files`.
 
 ## Bibliografía
 
