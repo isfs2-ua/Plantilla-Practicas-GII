@@ -2,6 +2,8 @@
 
 Explica el procedimiento, las decisiones tomadas y las herramientas utilizadas.
 
+Como ejemplo de cita, la guía de Pandoc describe las opciones de conversión y formato [@pandoc-manual]. Sustituye esta cita por las fuentes utilizadas en tu práctica.
+
 ## Ejemplo de código
 
 ```python

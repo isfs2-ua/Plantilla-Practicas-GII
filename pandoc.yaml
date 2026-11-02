@@ -13,6 +13,9 @@ table-of-contents: true
 toc-depth: 3
 number-sections: true
 highlight-style: tango
+citeproc: true
+metadata:
+  bibliography: referencias.bib
 filters:
   - portadas/seleccion.lua
 variables:

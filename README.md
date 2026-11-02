@@ -79,15 +79,17 @@ Puedes usar Markdown de Pandoc para encabezados, tablas, imágenes y bloques de 
 
 En [Desarrollo](capitulos/03-desarrollo.md) encontrarás ejemplos listos para copiar de código, fórmulas, tablas y una figura con pie. También se muestran referencias automáticas a secciones, tablas, figuras y ecuaciones mediante `\label{...}` y `\ref{...}`. Estos ejemplos de referencias usan LaTeX y están destinados a la salida PDF; asigna un identificador distinto a cada elemento y sustituye el contenido y la imagen de ejemplo antes de entregar la memoria.
 
-## Bibliografía opcional
+## Bibliografía
 
-Crea un archivo `referencias.bib`, añade las fuentes y cítalas en el texto como `[@clave]`. Para generar la bibliografía, ejecuta:
+La plantilla incluye [referencias.bib](referencias.bib), una cita de ejemplo en el capítulo de desarrollo y un espacio para la bibliografía bajo «Referencias». Sustituye el ejemplo por tus fuentes y cítalas en el texto como `[@clave]`, usando la clave de cada entrada BibTeX. Para citar varias fuentes juntas, escribe `[@clave1; @clave2]`.
 
-```sh
-pandoc --defaults=pandoc.yaml --citeproc --bibliography=referencias.bib -o memoria.pdf
-```
+El comando habitual de generación del PDF procesa las citas automáticamente. Pandoc incluye en la bibliografía las fuentes citadas y las coloca en el bloque `::: {#refs}` del capítulo de referencias. Para cambiar el estilo, añade `--csl=estilo.csl` al comando. Consulta la [guía de citas de Pandoc](https://pandoc.org/MANUAL.html#citations).
 
-Pandoc añadirá las referencias al final; puedes situarlas bajo el encabezado «Referencias» usando un `::: {#refs}` seguido de `:::` en líneas separadas. El estilo puede cambiarse con `--csl=estilo.csl`. Consulta la [guía de citas de Pandoc](https://pandoc.org/MANUAL.html#citations).
+Si no necesitas bibliografía, elimina la cita de ejemplo; puedes dejar vacío `referencias.bib` y conservar el bloque de referencias, o quitar el capítulo de la lista `input-files` de `pandoc.yaml`.
+
+## Compilación automática
+
+El flujo de [GitHub Actions](.github/workflows/compilar.yml) comprueba las citas y compila la memoria con y sin logotipo en cada `push`, solicitud de cambios y ejecución manual. Si termina correctamente, el PDF de ejemplo queda disponible como artefacto de la ejecución durante siete días. El resultado se consulta en la pestaña **Actions** del repositorio; la comprobación comienza cuando los cambios estén subidos a GitHub.
 
 ## Licencias y recursos de terceros
 

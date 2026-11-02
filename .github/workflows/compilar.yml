@@ -1,0 +1,38 @@
+name: Compilar memoria
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Obtener la plantilla
+        uses: actions/checkout@v4
+
+      - name: Instalar Pandoc y LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc texlive-luatex texlive-latex-extra texlive-lang-spanish texlive-fonts-recommended lmodern
+
+      - name: Comprobar las citas
+        run: pandoc --defaults=pandoc.yaml --fail-if-warnings -t native -o /dev/null
+
+      - name: Compilar el PDF
+        run: pandoc --defaults=pandoc.yaml -o memoria.pdf
+
+      - name: Comprobar la portada sin logotipo
+        run: pandoc --defaults=pandoc.yaml -M logo-ua=false -o /tmp/memoria-sin-logo.pdf
+
+      - name: Guardar el PDF de ejemplo
+        uses: actions/upload-artifact@v4
+        with:
+          name: memoria-ejemplo
+          path: memoria.pdf
+          if-no-files-found: error
+          retention-days: 7
