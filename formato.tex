@@ -4,8 +4,10 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{fancyhdr}
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
+\setlength{\headheight}{14pt}
 
 % Portada: conserva los datos habituales de la cabecera Markdown.
 \definecolor{portadaazul}{HTML}{153653}
@@ -18,6 +20,16 @@
 \newcommand{\portadaprofesorado}{}
 \newcommand{\portadafechaentrega}{}
 \newcommand{\portadanumeropractica}{}
+\newcommand{\cabeceratitulo}{Memoria de prácticas}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{portadagris}\cabeceratitulo}
+\fancyfoot[C]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+% Separa el índice del contenido solo cuando Pandoc lo incluye.
+\let\indiceoriginal\tableofcontents
+\renewcommand{\tableofcontents}{\indiceoriginal\clearpage}
 \newif\ifportadalogo
 \portadalogotrue
 \newcommand{\portadacampo}[2]{%
@@ -27,6 +39,7 @@
 }
 \providecommand{\subtitle}[1]{\renewcommand{\portadasubtitulo}{#1}}
 \renewcommand{\maketitle}{%
+  \hypersetup{pageanchor=false}%
   \begin{titlepage}
     \sffamily
     \color{portadaazul}
@@ -109,5 +122,6 @@
     \vspace{0.5em}
     {\small\color{portadagris}\@date\par}
   \end{titlepage}%
+  \hypersetup{pageanchor=true}%
 }
 \makeatother

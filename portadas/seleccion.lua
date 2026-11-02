@@ -12,7 +12,8 @@ function Meta(meta)
     {'grupo', 'portadagrupo'},
     {'profesorado', 'portadaprofesorado'},
     {'fecha-entrega', 'portadafechaentrega'},
-    {'numero-practica', 'portadanumeropractica'}
+    {'numero-practica', 'portadanumeropractica'},
+    {'titulo-corto', 'cabeceratitulo'}
   }
   for _, campo in ipairs(campos) do
     local valor = meta[campo[1]]

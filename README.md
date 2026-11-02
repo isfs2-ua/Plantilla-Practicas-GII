@@ -53,6 +53,16 @@ logo-ua: false
 
 `logo-ua: false` sustituye el logotipo por una cabecera tipográfica y permite compilar sin `recursos/logo-ua.pdf`. Omite esta opción o usa `logo-ua: true` para mostrar el logotipo. Mantén `date` para el curso académico; `fecha-entrega` es independiente. Si usas `numero-practica`, puedes dejar el subtítulo para otra información y evitar repetir el número.
 
+### Encabezados y numeración
+
+Las páginas de contenido muestran un encabezado discreto y el número de página en el pie; la portada no se numera. Por defecto, el encabezado dice «Memoria de prácticas». Puedes cambiarlo desde la cabecera de `memoria.md`:
+
+```yaml
+titulo-corto: "Programación 1"
+```
+
+Usa un texto breve para que quepa en una línea. La numeración comienza en la primera página después de la portada.
+
 ### Galería de composiciones
 
 Estos ejemplos se muestran sin el logotipo. La última columna del [catálogo](portadas/asignaturas.tsv) indica qué composición corresponde a cada asignatura; el color depende de la asignatura elegida.
@@ -66,6 +76,8 @@ Estos ejemplos se muestran sin el logotipo. La última columna del [catálogo](p
 ## Markdown y LaTeX
 
 Puedes usar Markdown de Pandoc para encabezados, tablas, imágenes y bloques de código. Las fórmulas se escriben entre `$...$` o `$$...$$`. Para incluir LaTeX sin procesar, usa un bloque con la etiqueta `{=latex}`, como en el ejemplo de `capitulos/03-desarrollo.md`. Añade los paquetes que necesites a `formato.tex`; evita cargar dos veces paquetes ya incluidos por Pandoc. Los bloques de LaTeX puro están pensados para la salida PDF y pueden omitirse al convertir a otros formatos.
+
+En [Desarrollo](capitulos/03-desarrollo.md) encontrarás ejemplos listos para copiar de código, fórmulas, tablas y una figura con pie. También se muestran referencias automáticas a secciones, tablas, figuras y ecuaciones mediante `\label{...}` y `\ref{...}`. Estos ejemplos de referencias usan LaTeX y están destinados a la salida PDF; asigna un identificador distinto a cada elemento y sustituye el contenido y la imagen de ejemplo antes de entregar la memoria.
 
 ## Bibliografía opcional
 
