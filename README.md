@@ -7,6 +7,14 @@ Plantilla editable en Markdown para generar memorias en PDF con Pandoc y LuaLaTe
 - [Pandoc](https://pandoc.org/installing.html), con soporte para archivos de opciones (`--defaults`).
 - Una distribución de LaTeX que incluya LuaLaTeX y los paquetes usados por Pandoc (por ejemplo, TeX Live o MiKTeX). Una instalación mínima puede necesitar paquetes adicionales.
 
+En Debian y derivados, Fedora y Arch Linux y derivados puedes instalar estas dependencias con:
+
+```sh
+./instalar-dependencias.sh
+```
+
+El script utiliza el gestor de paquetes de la distribución y solicita privilegios de administrador mediante `sudo` si es necesario. En Arch también actualiza el sistema para evitar instalaciones parciales. Para compilar documentos personalizados puede ser necesario instalar paquetes de LaTeX adicionales.
+
 ## Uso
 
 1. Copia esta carpeta para cada práctica.
